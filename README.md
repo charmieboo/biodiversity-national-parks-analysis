@@ -26,13 +26,13 @@ observations = pd.read_csv('observations.csv', encoding='utf-8')
 ```
 
 ### Data Analysis
-_Distribution of Conservation Status_
+*** Distribution of Conservation Status ***
 The majority of species (5,633) were categorized as "No Intervention," meaning no conservation measures were required. A small number were endangered or in recovery.
 
-_Protected Species by Category_
+*** Protected Species by Category ***
 Analyzing the distribution of protected species across different categories showed that mammals and birds had the highest number of protected species.
 
-_Statistical Significance_
+*** Statistical Significance ***
 Chi-squared tests were performed to test the significance of differences in protection rates between species. A test between mammals and reptiles returned a p-value of 0.039, indicating a statistically significant difference in protection status between these groups.
 ```
 from scipy.stats import chi2_contingency
@@ -40,7 +40,7 @@ contingency2 = [[30, 146], [5, 73]]
 chi2_contingency(contingency2)
 ```
 
-_Prevalent Species_
+*** Prevalent Species ***
 The most common animal across all parks was the bat, with 23 occurrences. Bats were predominantly found in Yellowstone National Park.
 
 # Findings
