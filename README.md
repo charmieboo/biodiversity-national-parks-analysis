@@ -2,17 +2,46 @@
 ![Your paragraph text](https://github.com/user-attachments/assets/493b6e41-4425-4303-9510-6dd0d3fa0ae5)
 
 # Project Overview
-For this project, I will interpret data from the National Parks Service about endangered species in different parks. I will perform some data analysis on the conservation statuses of these species and investigate if there are any patterns or themes to the types of species that become endangered. During this project, I will analyze, clean up, and plot data as well as pose questions and seek to answer them in a meaningful way.
-
-# Project Objectives
-Objectives we want to find out from the datasets:
+For this project, I will interpret data from the National Parks Service about endangered species in different parks. I will perform some data analysis on the conservation statuses of these species and investigate if there are any patterns or themes to the types of species that become endangered. This project scopes, cleans, analyzes, visualizes, and interprets biodiversity data, answering questions such as:
   * What is the distribution of conservation status for animals?
   * Are certain types of species more likely to be endangered?
   * Are the differences between species and their conservation status significant?
   * Which species were spotted the most at each park?
 
 # Data
-This project has two data sets that came with the package. The first csv file has information about each species and another has observations of species with park locations. This data will be used to analyze the goals of the project. Note: The data for this project is *inspired* by real data, but is mostly fictional. Both Observations.csv and Species_info.csv was provided by [Codecademy](https://www.codecademy.com).
+The data for this project was sourced from [Codecademy](https://www.codecademy.com) and includes two datasets:
+* Species Info: Information on species observed in National Parks.
+* Observations: Sightings of species in different parks over the past 7 days.
+
+### Data Loading
+The two datasets were loaded using Python's pandas library for manipulation, with visualization performed using matplotlib and seaborn:
+```
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+species = pd.read_csv('species_info.csv', encoding='utf-8')
+observations = pd.read_csv('observations.csv', encoding='utf-8')
+```
+
+### Data Analysis
+_Distribution of Conservation Status_
+The majority of species (5,633) were categorized as "No Intervention," meaning no conservation measures were required. A small number were endangered or in recovery.
+
+_Protected Species by Category_
+Analyzing the distribution of protected species across different categories showed that mammals and birds had the highest number of protected species.
+
+_Statistical Significance_
+Chi-squared tests were performed to test the significance of differences in protection rates between species. A test between mammals and reptiles returned a p-value of 0.039, indicating a statistically significant difference in protection status between these groups.
+```
+from scipy.stats import chi2_contingency
+contingency2 = [[30, 146], [5, 73]]
+chi2_contingency(contingency2)
+```
+
+_Prevalent Species_
+The most common animal across all parks was the bat, with 23 occurrences. Bats were predominantly found in Yellowstone National Park.
 
 # Findings
 * What is the distribution of conservation status for species?
@@ -28,4 +57,7 @@ This project has two data sets that came with the package. The first csv file ha
 
 
 # Further Research
-This dataset only included observations from the last 7 days which prohibits analyze changes over time. It would be curious to see how the conservation status for various species changes over time. Another piece that is missing is the Area of each park, it can be assumed that Yellowstone National Park might be much larger than the other parks which would mean that it would exhibit more observations and greater biodiversity. Lastly, if precise locations were recorded, the spatial distribution of the species could also be observed and test if these observations are spatially clustered.
+Future work could expand on this analysis by:
+* Incorporating data over time to observe trends in species populations.
+* Considering the area of each park to normalize observations by park size.
+* Analyzing the spatial distribution of species to understand if sightings are geographically clustered.
