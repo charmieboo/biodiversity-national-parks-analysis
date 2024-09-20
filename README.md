@@ -2,6 +2,7 @@
 ![Your paragraph text](https://github.com/user-attachments/assets/493b6e41-4425-4303-9510-6dd0d3fa0ae5)
 
 # Project Overview
+=================================================================================================================================
 For this project, I will interpret data from the National Parks Service about endangered species in different parks. I will perform some data analysis on the conservation statuses of these species and investigate if there are any patterns or themes to the types of species that become endangered. This project scopes, cleans, analyzes, visualizes, and interprets biodiversity data, answering questions such as:
   * What is the distribution of conservation status for animals?
   * Are certain types of species more likely to be endangered?
@@ -9,6 +10,7 @@ For this project, I will interpret data from the National Parks Service about en
   * Which species were spotted the most at each park?
 
 # Data
+=================================================================================================================================
 The data for this project was sourced from [Codecademy](https://www.codecademy.com) and includes two datasets:
 * Species Info: Information on species observed in National Parks.
 * Observations: Sightings of species in different parks over the past 7 days.
@@ -26,13 +28,14 @@ observations = pd.read_csv('observations.csv', encoding='utf-8')
 ```
 
 ### Data Analysis
-*** Distribution of Conservation Status ***
+=================================================================================================================================
+#### Distribution of Conservation Status
 The majority of species (5,633) were categorized as "No Intervention," meaning no conservation measures were required. A small number were endangered or in recovery.
 
-*** Protected Species by Category ***
+#### Protected Species by Category
 Analyzing the distribution of protected species across different categories showed that mammals and birds had the highest number of protected species.
 
-*** Statistical Significance ***
+#### Statistical Significance 
 Chi-squared tests were performed to test the significance of differences in protection rates between species. A test between mammals and reptiles returned a p-value of 0.039, indicating a statistically significant difference in protection status between these groups.
 ```
 from scipy.stats import chi2_contingency
@@ -40,7 +43,7 @@ contingency2 = [[30, 146], [5, 73]]
 chi2_contingency(contingency2)
 ```
 
-*** Prevalent Species ***
+#### Prevalent Species
 The most common animal across all parks was the bat, with 23 occurrences. Bats were predominantly found in Yellowstone National Park.
 
 # Findings
