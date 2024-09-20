@@ -19,8 +19,13 @@ This project has two data sets that came with the package. The first csv file ha
     - The vast majority of species were not part of conservation.(5,633 vs 191)
 * Are certain types of species more likely to be endangered?
     - Mammals and Birds had the highest percentage of being in protection: 17% and 15.4% respectively.
+![Species according to conservation status](https://github.com/user-attachments/assets/bddc4519-8997-4482-93f2-d451b4bb5916)
 * Are the differences between species and their conservation status significant?
     - While Mammals and Birds did not have significant difference in conservation percentage, mammals and reptiles exhibited a statistically significant difference.
 * Which animal is most prevalent and what is their distribution amongst parks?
     - The study found that bats occurred the most number of times and they were most likely to be found in Yellowstone National Park.
-![protected_per_species](https://user-images.githubusercontent.com/71391244/126174710-e5468c0e-f53c-440e-8516-d18483a718f8.jpg)
+![Observation of bats per week](https://github.com/user-attachments/assets/9f51e04d-8b5c-4bae-ad09-2c8114bf16df)
+
+
+# Further Research
+This dataset only included observations from the last 7 days which prohibits analyze changes over time. It would be curious to see how the conservation status for various species changes over time. Another piece that is missing is the Area of each park, it can be assumed that Yellowstone National Park might be much larger than the other parks which would mean that it would exhibit more observations and greater biodiversity. Lastly, if precise locations were recorded, the spatial distribution of the species could also be observed and test if these observations are spatially clustered.
